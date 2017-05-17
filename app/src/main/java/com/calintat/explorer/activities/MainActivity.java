@@ -44,6 +44,7 @@ import javax.crypto.spec.PBEParameterSpec;
 import com.calintat.explorer.App;
 import com.calintat.explorer.R;
 import com.calintat.explorer.helper.DBHelper;
+import com.calintat.explorer.helper.PrefsHelper;
 import com.calintat.explorer.recycler.Adapter;
 import com.calintat.explorer.ui.InputDialog;
 import com.calintat.explorer.utils.FileUtils;
@@ -97,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        PrefsHelper.writePrefBool(this, App.PREF_DELETE_AFTER_10_ATTEMPT, false);
+        PrefsHelper.writePrefBool(this, App.PREF_PASSWORD_ACTIVE,false);
+        if (PrefsHelper.readPrefBool(this, App.PREF_PASSWORD_ACTIVE)) {
+            Intent intent = new Intent(App.getContext(), PasswordActivity.class);
+            startActivity(intent);
+        }
         initAppBarLayout();
 
         initCoordinatorLayout();

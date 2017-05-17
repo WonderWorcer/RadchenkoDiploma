@@ -32,6 +32,7 @@ android {
     }
 }
 
+
 dependencies {
 
     ext.support_version = '25.1.0'
@@ -53,4 +54,5 @@ dependencies {
     compile "com.android.support:support-v4:$support_version"
 
     compile 'com.github.bumptech.glide:glide:3.5.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
 }

@@ -1,14 +1,14 @@
 <resources>
 
-    <string translatable="false" name="app_name">Program</string>
+    <string name="app_name" translatable="false">Program</string>
 
- <string translatable="false" name="app_version">1.0.4</string>
+    <string name="app_version" translatable="false">1.0.4</string>
 
-    <string translatable="false" name="app_developer">Calin Tataru</string>
+    <string name="app_developer" translatable="false">Calin Tataru</string>
 
-   <string name="action_delete">Зашифровать</string>
+    <string name="action_delete">Зашифровать</string>
 
-   <string name="action_delete1">Дешифровать</string>
+    <string name="action_delete1">Дешифровать</string>
 
     <string name="action_rename">Переименовать</string>
 

@@ -36,6 +36,8 @@
             android:title="Show file sizes"
             android:defaultValue="false" />
 
+
+
     </PreferenceCategory>
 
     <PreferenceCategory
