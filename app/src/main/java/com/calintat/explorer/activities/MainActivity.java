@@ -31,15 +31,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.util.Random;
-
-import javax.crypto.Cipher;
-import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
-import javax.crypto.spec.PBEParameterSpec;
 
 import com.calintat.explorer.App;
 import com.calintat.explorer.R;
@@ -55,7 +46,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static com.calintat.explorer.utils.FileUtils.*;
+import static com.calintat.explorer.utils.FileUtils.FileType;
+import static com.calintat.explorer.utils.FileUtils.getExternalStorage;
+import static com.calintat.explorer.utils.FileUtils.getInternalStorage;
+import static com.calintat.explorer.utils.FileUtils.getMimeType;
+import static com.calintat.explorer.utils.FileUtils.getName;
+import static com.calintat.explorer.utils.FileUtils.getPath;
+import static com.calintat.explorer.utils.FileUtils.getPublicDirectory;
+import static com.calintat.explorer.utils.FileUtils.getStorageUsage;
+import static com.calintat.explorer.utils.FileUtils.removeExtension;
+import static com.calintat.explorer.utils.FileUtils.unzip;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -430,6 +430,9 @@ public class MainActivity extends AppCompatActivity {
 
                 case R.id.navigation_settings:
                     gotoSettings();
+                    return true;
+                case R.id.navigation_password:
+                    gotoPassword();
                     return true;
             }
 
@@ -901,6 +904,11 @@ public class MainActivity extends AppCompatActivity {
     private void gotoSettings() {
 
         startActivity(new Intent(this, SettingsActivity.class));
+    }
+
+    private void gotoPassword() {
+
+        startActivity(new Intent(this, PassActivity.class));
     }
 
     private void gotoApplicationSettings() {
